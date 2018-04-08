@@ -33,7 +33,7 @@ def faceLogin():
         duanzilist = Mysql_helper.select(sql)
         return render_template('main.html', duanzilist=duanzilist)
     else:
-        return "<h1>人脸识别不是本人，请尝试用户名密码登陆！</h1>"
+        return "<h1>不是人脸或不是本人，请尝试用户名密码登陆！</h1>"
 
 @app.route('/select', methods=["POST"])
 def select():

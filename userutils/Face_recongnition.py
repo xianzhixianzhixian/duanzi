@@ -5,7 +5,7 @@ import datetime
 class Face:
 
     # 载入程序的目录下自己的人脸图片并encoding
-    me_image = face_recognition.load_image_file("/home/xianzhixianzhixian/图片/摄像头/0.jpg")
+    me_image = face_recognition.load_image_file("0.jpg")
     me_face_encoding = face_recognition.face_encodings(me_image)[0]
     known_face_encodings = [me_face_encoding, ]
 
@@ -44,7 +44,7 @@ class Face:
             #每秒刷新一次
             cv2.waitKey(1)
 
-            if (datetime.datetime.now() - now).seconds > 5:
+            if (datetime.datetime.now() - now).seconds > 3:
                 # 读取摄像头输入的视频流
                 ret, frame = cap.read()
                 # 将图像与y轴对称
