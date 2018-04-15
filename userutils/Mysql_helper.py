@@ -59,7 +59,7 @@ class Mysql_helper(object):
     def check(username,password):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='123456', db='duanzi', charset='utf8')
         statement = conn.cursor()
-        sql='select id from user where username=\'%s\' and pwssword=\'%s\''%(username,password)
+        sql='select id from user where username=\'%s\' and password=\'%s\''%(username,password)
         try:
             statement.execute(sql)
             results = statement.fetchall()

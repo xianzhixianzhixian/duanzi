@@ -51,7 +51,7 @@ def registResult():
     if Mysql_helper.check(username,password):
         return "<h1>帐号已存在！</h1>"
     else:
-        sql="insert into user(username,pwssword) values(\'%s\',\'%s\')"%(username,password)
+        sql="insert into user(username,password) values(\'%s\',\'%s\')"%(username,password)
         if Mysql_helper.update(sql)==0:
             return "<h1>注册失败，请查看使用说明</h1>"
         else:
